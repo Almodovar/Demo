@@ -12910,13 +12910,13 @@ document.getElementById("commentSubmitBtn").addEventListener("click", function (
     });
     iconFeature.push(feature);
     writeJson(iconFeature);
-    commentOverlay.style[transformProperty] = "scale(1,1)";
+    commentOverlay.style[transformProperty] = "scale(0,0)";
     commentOverlay.style.opacity = 0;
     currentFeature.feature = undefined;    
 });
 
 document.getElementById("commentCancelBtn").addEventListener("click", function () {
-    commentOverlay.style[transformProperty] = "scale(1,1)";
+    commentOverlay.style[transformProperty] = "scale(0,0)";
     commentOverlay.style.opacity = 0;
     vectorLayer.getSource().removeFeature(currentFeature.feature);
     currentFeature.feature = undefined;
