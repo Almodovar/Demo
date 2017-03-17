@@ -1,0 +1,138 @@
+#navBar {
+    position: absolute;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4885ed;
+}
+
+li {
+    float: left;
+}
+
+li:first-child {
+    margin-left: 20px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.active {
+    background-color: #db3236;
+}
+
+.active:hover {
+    background-color: #db3236;
+    color: white;
+}
+
+#container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 4%;
+}
+
+#wrapper {
+    left: 0px;
+    position: relative;
+}
+
+.content {
+    float: left;
+    width: 50%;
+    height: 100%;
+    /*margin: 0;*/
+}
+
+
+/*#itemThree {
+    background: black;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    z-index: 10;
+    opacity: 1;
+}*/
+
+
+/*#leftImg{
+    height: 100%;
+    width: 100%;
+}*/
+
+#btnStart {
+    border-radius: 35px;
+    border: solid dodgerblue 8px;
+    width: 60px;
+    height: 60px;
+    transform: scale(1.0);
+    transition: transform 0.5s ease-out, border 0.5s ease-out, background-color 1s ease-out, opacity 1s ease-out;
+    /*margin-left: 10%;*/
+    /*margin-right: 10%;*/
+    /*background-color:red;*/
+    background: lightgray url("../assets/img/Lock-icon.png") no-repeat center;
+    background-size: 100%;
+    /* To fill the dimensions of container (button), or */
+    background-size: 23px auto;
+    opacity: 1;
+    /* to specify dimensions explicitly */
+}
+
+#btnStart:hover {
+    background-color: lightgreen;
+    border-radius: 35px;
+    border: solid dodgerblue 10px;
+    width: 60px;
+    height: 60px;
+    transform: scale(1.2);
+    /*background-color: white;*/
+}
+
+#btnStart:hover:after {
+    background-color: lightgreen;
+}
+
+#btnPubA,
+#btnStart,
+#btnPriA {
+    position: absolute;
+}
+
+#btnPubA {
+    left: 36%;
+}
+
+#btnPriA {
+    left: 50%;
+}
+
+#btnPubA,
+#btnPriA {
+    width: 14%;
+    height: 40px;
+    margin-top: 15px;
+    transform: scale(0, 0);
+    transition: transform 1s ease-in, left 0.5s ease-in, opacity 0.5s ease-in, background-color 0.5 ease in;
+}
+
+#btnPubA:hover{
+    background-color:#f4c20d; 
+
+}
+#btnPriA:hover{
+    background-color:#f4c20d; 
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Ex02_PublicMapSite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watchify src/main.js -o dist/bundle.js -v",
+    "build": "browserify src/main.js | uglifyjs -mc warnings=false > dist/bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

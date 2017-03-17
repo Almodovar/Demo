@@ -1,0 +1,278 @@
+#wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+#content {
+    position: relative;
+}
+
+#leftDiv,
+#midDiv,
+#rightDiv,
+#btmDiv {
+    position: absolute;
+}
+
+#whiteBoard {
+    top: 15%;
+    height: 30%;
+    position: relative;
+}
+
+#selectDiv {
+    height: 60%;
+    position: relative;
+}
+
+#linkPublicMap,
+#linkEducation,
+#linkViewHistory {
+    position: absolute;
+    width: 20%;
+    height: 80%;
+    top: 10%;
+    transition: all 0.3s ease-in;
+    border: solid 1px lightslategray;
+    border-radius: 5px;
+}
+
+#linkPublicMap {
+    left: 19%;
+    border-right: solid 5px #3cba54;
+    border-bottom: solid 7px #3cba54;
+}
+
+#linkEducation {
+    left: 40%;
+    border-top: solid 7px #f4c20d;
+}
+
+#linkViewHistory {
+    left: 61%;
+    border-left: solid 5px #3cba54;
+    border-bottom: solid 7px #3cba54;
+}
+
+#linkPublicMap:hover {
+    left: 18%;
+    /*top: 5%;*/
+    border-right: solid 5px #db3236;
+    border-bottom: solid 7px #db3236;
+}
+
+#linkEducation:hover {
+    left: 40%;
+    top: 12%;
+    border-top: solid 7px #db3236;
+}
+
+#linkViewHistory:hover {
+    left: 62%;
+    /*top: 5%;*/
+    border-left: solid 5px #db3236;
+    border-bottom: solid 7px #db3236;
+}
+
+.buttonCenterDiv {
+    text-align: center;
+}
+
+img {
+    position: relative;
+    width: 40%;
+    height: 25%;
+    margin-top: 20px;
+    left: 30%
+}
+
+.pHide {
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+    .pHide {
+        display: none;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .pHide {
+        display: none;
+    }
+}
+
+#leftTop {
+    position: relative;
+    height: 10%;
+    width: 100%;
+}
+
+#leftTop div {
+    position: relative;
+    height: 50%;
+    top: 50%;
+    font-family: 'Rajdhani', sans-serif;
+    color: #0057e7;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#leftTop input {
+    width: 20%;
+    height: 30px;
+}
+
+#leftMid {
+    position: relative;
+    height: 80%;
+    border-top: solid 1px #0057e7;
+    border-bottom: solid 1px #0057e7;
+    font-family: 'Rajdhani', sans-serif;
+    color: #0057e7;
+}
+
+label {
+    font-size: 20px;
+}
+
+
+/*#leftMid div:first-child {
+    font-family: 'Rajdhani', sans-serif;
+    color: #0057e7;
+    font-weight: bold;
+    font-size: 18px;
+}*/
+
+#leftBtm {
+    position: relative;
+    height: 10%;
+}
+
+input:focus {
+    border: solid 1px #0057e7;
+}
+
+#publicMap {
+    position: relative;
+    float: left;
+    margin-left: 2%;
+    width: 64%;
+    height: 90%;
+    top: 5%;
+}
+
+#publicNote {
+    position: relative;
+    float: left;
+    margin-left: 2%;
+    width: 30%;
+    background: white;
+    height: 90%;
+    top: 5%;
+    overflow: scroll;
+}
+
+#notes {
+    width: 100%;
+    border-top: solid 1px gray;
+}
+
+.note {
+    margin-top: 10px;
+    height: 80px;
+    border-bottom: dotted 1px gray;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+#commentOverlay {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    top: 5%;
+    left: 30%;
+    width: 40%;
+    height: 180px;
+    background: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    position: absolute;
+    z-index: 10;
+    transform: scale(0);
+    opacity: 0;
+    transition: opacity 0.3s ease-in, transform 0.5s ease-in;
+}
+
+textarea {
+    width: 90%;
+    margin-left: 5%;
+}
+
+
+/*.overlay {
+    display: none;
+    position: absolute;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 180px;
+    top: -76px;
+    left: -90px;
+}*/
+
+
+/*.overlay:after {
+    top: 100%;
+    border: 10px solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-top-color: rgba(255,255,255,0.9);
+}*/
+
+a:hover {
+    cursor: pointer;
+}
+
+.commentTag {
+    font-size: 12px;
+    font-family: 'Rajdhani', sans-serif;
+    padding: 3px 10px 3px 10px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease
+}
+
+#wTag:hover {
+    background-color: #5bc0de;
+    color: white;
+}
+
+#sTag:hover {
+    background-color: #ffbb33;
+    color: white;
+}
+
+#lTag:hover {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.commentLevel {
+    padding: 1px 5px 1px 5px;
+    text-decoration: none;
+}
+
+.commentLevel:hover {
+    background-color: #d62d20;
+    color: white;
+}

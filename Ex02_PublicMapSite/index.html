@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <!--<link href="./css/carousel.css" rel="stylesheet">-->
+    <link href="./css/button.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani|Unica+One" rel="stylesheet">
+    <script src="https://openlayers.org/en/v4.0.1/build/ol.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="content">
+            <div id="leftDiv">
+                <div id="leftTop">
+                    <div>
+                        <form class="form-horizontal" style="width: 100%; text-align: center;">
+                            <div class="form-group form-group-sm" style="width: 100%;">
+                                <label class="col-sm-2 control-label" for="formGroupInputSmall">GET</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" id="formGroupInputSmall" placeholder="NAME OF PLACE">
+                                </div>
+                                <div class="col-sm-1">
+                                    <a class="btn btn-danger btn-sm backHome" role="button"><i class="fa fa-home" aria-hidden="true"></i>  BACK</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="leftMid">
+
+                    <div id="publicMap">
+                        <div id="commentOverlay" class="overlay">
+                            <div style="text-align: center; padding-bottom: 15px; border-bottom: solid 1px lightgrey ">
+                                <a id="wTag" class="commentTag">water</a>
+                                <a id="sTag" class="commentTag">soil</a>
+                                <a id="lTag" class="commentTag">livestock</a>
+                            </div>
+                            <textarea id="commentText" rows="3" style="margin-top: 15px;"></textarea>
+                            <div style="text-align: center ">
+                                <a class="commentLevel">1</a>
+                                <a class="commentLevel">2</a>
+                                <a class="commentLevel">3</a>
+                                <a class="commentLevel">4</a>
+                                <a class="commentLevel">5</a>
+                            </div>
+                            <div style="text-align: center; margin-top: 10px;">
+                                <a id="commentSubmitBtn" style="margin-right: 5px;text-decoration: none;font-size: 12px;font-family: 'Rajdhani', sans-serif; ">
+                                    <i class="fa fa-check" aria-hidden="true"></i> submit
+                                </a>
+
+                                <a id="commentCancelBtn" style="margin-left: 5px; text-decoration: none;font-size: 12px;font-family: 'Rajdhani', sans-serif;  ">
+                                    <i class="fa fa-close" aria-hidden="true"></i> close
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="publicNote">
+                        <div>
+                            <form class="form-horizontal" style="width: 100%; text-align: center;">
+                                <div class="form-group form-group-sm" style="width: 100%;">
+                                    <label class="col-sm-2 control-label" for="formGroupInputSmall"> SEARCH</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" id="formGroupInputSmall" placeholder="PROBLEM OF INTEREST">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="notes">
+                            <div class="note">
+                                <div>
+                                    <span class="label label-info">water</span>
+                                    <span class="label label-default" style="float:right">date</span>                                    
+                                    <span class="label label-danger" style="float:right; margin-right: 10px;">lvl 2</span>
+
+                                </div>
+                                <div>
+                                    <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus nesciunt consequatur
+                                    voluptas, hic voluptate ut facere laudantium quis magnam
+                                </div>
+
+                            </div>
+                            <div class="note">
+                                <span class="label label-success">livestock</span>
+
+                            </div>
+                            <div class="note">
+                                <span class="label label-warning">manure</span>
+
+                            </div>
+                            <div class="note">
+                                <span class="label label-warning">manure</span>
+
+                            </div>
+                            <div class="note">
+                                <span class="label label-warning">manure</span>
+
+                            </div>
+                            <div class="note">
+                                <span class="label label-warning">manure</span>
+
+                            </div>
+                            <div class="note">
+                                <span class="label label-warning">manure</span>
+
+                            </div>
+                            <div class="note">
+                                <span class="label label-warning">manure</span>
+
+                            </div>
+                            <div class="note">
+                                <span class="label label-warning">manure</span>
+
+                            </div>
+                            <div class="note">
+                                <span class="label label-warning">manure</span>
+
+                            </div>
+                            <div class="note">
+                                <span class="label label-warning">manure</span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="leftBtm">
+
+                </div>
+            </div>
+            <div id="midDiv">
+                <div id="whiteBoard">
+                    <div>
+                        <p style="text-align: center;font-family: 'Unica One', cursive; font-size: 40px ">
+                            WELCOME
+                        </p>
+                        <p style="text-align: center;font-family: 'Unica One', cursive; font-size: 24px ">
+                            to explore the place
+                        </p>
+                    </div>
+                </div>
+
+                <div id="selectDiv">
+                    <div id="linkPublicMap">
+                        <!--<div style="position: relative; width: 50%; ">
+                            
+                        </div>-->
+                        <img src="./assets/img/map-icon.png" alt="">
+                        <div style="height: 45%">
+                            <p style="text-align: center;font-family: 'Rajdhani', sans-serif; font-size: 24px">
+                                <br>Share
+                            </p>
+                            <p class="pHide">
+                                Water
+                                <br> Soil
+                                <br> Livestock
+                            </p>
+                        </div>
+                        <div class="buttonCenterDiv">
+                            <!--<button class="button button-large button-plain button-border button-circle"><i class="fa fa-reply"></i></button>-->
+                            <a class="button button-border button-rounded button-primary" id="btnPublicMap"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+
+                            <!--<span class="button-wrap">
+                            <button class="button button-circle button-raised button-primary" id="btnPublicMap">
+                                <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>    
+                            </button>
+                            </span>-->
+                        </div>
+                    </div>
+                    <div id="linkEducation">
+                        <img src="./assets/img/educate-icon.png" alt="">
+                        <div style="height: 45%">
+                            <p style="text-align: center;font-family: 'Rajdhani', sans-serif; font-size: 24px ">
+                                <br>Educate
+                            </p>
+                            <p class="pHide">
+                                BMP
+                                <br> Modelling
+                                <br> Policy
+                            </p>
+                        </div>
+                        <div class="buttonCenterDiv">
+                            <a class="button button-border button-rounded button-primary" id="btnEducation"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></a>
+
+                        </div>
+
+                    </div>
+                    <div id="linkViewHistory">
+                        <img src="./assets/img/chart-icon.png" alt="">
+
+                        <div style="height: 45%">
+                            <p style="text-align: center;font-family: 'Rajdhani', sans-serif; font-size: 24px ">
+                                <br>History
+                            </p>
+                            <p class="pHide">
+                                Distribution
+                                <br> Enrollment
+                            </p>
+                        </div>
+                        <div class="buttonCenterDiv">
+                            <a class="button button-border button-rounded button-primary" id="btnViewHistory"><i class="fa fa-arrow-circle-o-right " aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rightDiv" style="background: yellow">
+                right
+            </div>
+            <div id="btmDiv" style="background: purple">
+                btm
+            </div>
+        </div>
+    </div>
+</body>
+<script src="dist/bundle.js"></script>
+<!--<script src="./src/main.js"></script>-->
+
+</html>
