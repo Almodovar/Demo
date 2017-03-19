@@ -20,15 +20,22 @@
         <div id="content">
             <div id="leftDiv">
                 <div id="leftTop">
-                    <div>
+                    <div id="mapSelectDiv">
                         <form class="form-horizontal" style="width: 100%; text-align: center;">
                             <div class="form-group form-group-sm" style="width: 100%;">
                                 <label class="col-sm-2 control-label" for="formGroupInputSmall">GET</label>
                                 <div class="col-sm-8">
-                                    <input class="form-control" type="text" id="formGroupInputSmall" placeholder="NAME OF PLACE">
+                                    <input class="form-control" type="text" id="mapSelector" placeholder="NAME OF PLACE">
                                 </div>
                                 <div class="col-sm-1">
                                     <a class="btn btn-danger btn-sm backHome" role="button"><i class="fa fa-home" aria-hidden="true"></i>  BACK</a>
+                                </div>
+                                <div class="col-sm-8 col-sm-push-2">
+                                    <div id="mapSelectListDiv">
+                                        <div>
+                                            dfdfdfdf
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -42,6 +49,8 @@
                                 <a id="wTag" class="commentTag">water</a>
                                 <a id="sTag" class="commentTag">soil</a>
                                 <a id="lTag" class="commentTag">livestock</a>
+                                <a id="tagNotice" class="notice"></a>
+
                             </div>
                             <textarea id="commentText" rows="3" style="margin-top: 15px;"></textarea>
                             <div style="text-align: center ">
@@ -50,6 +59,7 @@
                                 <a class="commentLevel">3</a>
                                 <a class="commentLevel">4</a>
                                 <a class="commentLevel">5</a>
+                                <a id="levelNotice" class="notice" "></a>
                             </div>
                             <div style="text-align: center; margin-top: 10px;">
                                 <a id="commentSubmitBtn" style="margin-right: 5px;text-decoration: none;font-size: 12px;font-family: 'Rajdhani', sans-serif; ">
@@ -75,59 +85,6 @@
                             </form>
                         </div>
                         <div id="notes">
-                            <div class="note">
-                                <div>
-                                    <span class="label label-info">water</span>
-                                    <span class="label label-default" style="float:right">date</span>                                    
-                                    <span class="label label-danger" style="float:right; margin-right: 10px;">lvl 2</span>
-
-                                </div>
-                                <div>
-                                    <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus nesciunt consequatur
-                                    voluptas, hic voluptate ut facere laudantium quis magnam
-                                </div>
-
-                            </div>
-                            <div class="note">
-                                <span class="label label-success">livestock</span>
-
-                            </div>
-                            <div class="note">
-                                <span class="label label-warning">manure</span>
-
-                            </div>
-                            <div class="note">
-                                <span class="label label-warning">manure</span>
-
-                            </div>
-                            <div class="note">
-                                <span class="label label-warning">manure</span>
-
-                            </div>
-                            <div class="note">
-                                <span class="label label-warning">manure</span>
-
-                            </div>
-                            <div class="note">
-                                <span class="label label-warning">manure</span>
-
-                            </div>
-                            <div class="note">
-                                <span class="label label-warning">manure</span>
-
-                            </div>
-                            <div class="note">
-                                <span class="label label-warning">manure</span>
-
-                            </div>
-                            <div class="note">
-                                <span class="label label-warning">manure</span>
-
-                            </div>
-                            <div class="note">
-                                <span class="label label-warning">manure</span>
-
-                            </div>
                         </div>
                     </div>
 

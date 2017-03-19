@@ -110,7 +110,7 @@ img {
     width: 100%;
 }
 
-#leftTop div {
+#mapSelectDiv {
     position: relative;
     height: 50%;
     top: 50%;
@@ -123,6 +123,25 @@ img {
 #leftTop input {
     width: 20%;
     height: 30px;
+}
+
+#mapSelectListDiv {
+    position: absolute;
+    width: 20%;
+    opacity: 1;
+    height: 0px;
+    transition: height 0.5s ease;
+    background: white;
+    opacity: 0;
+    overflow: scroll;
+    z-index: 9;
+}
+
+#mapSelectListDiv div {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    padding: 10px;
+    text-align: left;
 }
 
 #leftMid {
@@ -181,12 +200,15 @@ input:focus {
 }
 
 .note {
+    position: relative;
     margin-top: 10px;
     height: 80px;
     border-bottom: dotted 1px gray;
     font-family: 'Rajdhani', sans-serif;
     font-size: 12px;
     overflow: hidden;
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
 }
 
 #commentOverlay {
@@ -275,4 +297,47 @@ a:hover {
 .commentLevel:hover {
     background-color: #d62d20;
     color: white;
+}
+
+
+/* WebKit browsers */
+
+::-webkit-input-placeholder {
+    color: #db3236;
+}
+
+
+/* Mozilla Firefox 4 to 18 */
+
+:-moz-placeholder {
+    color: #db3236;
+    opacity: 1;
+}
+
+
+/* Mozilla Firefox 19+ */
+
+::-moz-placeholder {
+    color: #db3236;
+    opacity: 1;
+}
+
+
+/* Internet Explorer 10+ */
+
+:-ms-input-placeholder {
+    color: #db3236;
+}
+
+.notice {
+    color: #db3236;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.notice:hover {
+    color: #db3236;
+    text-decoration: none;
+    cursor: default;
 }
