@@ -199,6 +199,7 @@ var target = map.getTarget();
 var jTarget = typeof target === "string" ? $("#" + target) : $(target);
 
 map.on('click', function (event) {
+    resetNoteSearch();
     var feature = map.forEachFeatureAtPixel(event.pixel,
         function (feature, layer) {
             currentFeature.feature = feature;
@@ -223,6 +224,17 @@ map.on('click', function (event) {
             }
         }
     } else {
+
+        // var features = vectorLayer.getSource().getFeatures();
+
+        for (var i = 0; i < iconFeature.length; i++) {
+            if(iconFeature[i].getProperties().type === undefined){
+                vectorLayer.getSource().removeFeature(iconFeature[i]);
+            }
+        }
+        vectorLayer.getSource().changed();
+
+
         commentOverlay.style[transformProperty] = "scale(1,1)";
         commentOverlay.style.opacity = 0.9;
         var featurePos = event.coordinate;
@@ -245,9 +257,9 @@ $(map.getViewport()).on('mousemove', function (e) {
 
     } else {
         jTarget.css("cursor", "");
-        if (vectorLayer.getSource().getFeatures().length !== 0) {
-            for (var i = 0; i < vectorLayer.getSource().getFeatures().length; i++) {
-                vectorLayer.getSource().getFeatures()[i].getStyle().getImage().setScale(0.03);
+        if (iconFeature.length !== 0) {
+            for (var i = 0; i < iconFeature.length; i++) {
+                iconFeature[i].getStyle().getImage().setScale(0.03);
             }
             vectorLayer.getSource().changed();
 
@@ -433,4 +445,72 @@ for (var i = 0; i < document.body.getElementsByClassName("commentLevel").length;
         currentFeature.level = event.target.text;
         document.getElementById("levelNotice").text = "";
     });
+}
+
+document.getElementById("searchFeatureType").onkeyup = function (event) {
+
+    filterNotesByType(event.target.value);
+    filterFeaturesByType(event.target.value);
+
+};
+
+function filterNotesByType(s) {
+    var notes = document.body.getElementsByClassName("note");
+    for (var i = 0; i < notes.length; i++) {
+        var filterType = notes[i].childNodes[0].childNodes[0].innerHTML.trim();
+        console.log(filterType);
+        if (s.length === 0) {
+            notes[i].style.opacity = 0.9;
+        } else if (filterType != s) {
+            notes[i].style.opacity = 0.3;
+        } else {
+            notes[i].style.opacity = 0.9;
+        }
+
+    }
+}
+
+function filterFeaturesByType(s) {
+    // var features = vectorLayer.getSource().getFeatures();
+
+    for (var i = 0; i < iconFeature.length; i++) {
+
+        var types = iconFeature[i].getProperties().type;
+        if (s.length === 0) {
+            iconFeature[i].getStyle().getImage().setOpacity(1);
+        } else if (arrayInclude(s, types) !== true) {
+            iconFeature[i].getStyle().getImage().setScale(0.03);
+            iconFeature[i].getStyle().getImage().setOpacity(0.5);
+
+        } else {
+            iconFeature[i].getStyle().getImage().setScale(0.04);
+            iconFeature[i].getStyle().getImage().setOpacity(1);
+        }
+    }
+    vectorLayer.getSource().changed();
+
+}
+
+function arrayInclude(s, arr) {
+    for (var i = 0; i < arr.length; i++) {
+        if (s === arr[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function resetNoteSearch() {
+    document.getElementById("searchFeatureType").value = "";
+    var notes = document.body.getElementsByClassName("note");
+    for (var i = 0; i < notes.length; i++) {
+        notes[i].style.opacity = 0.9;
+    }
+
+    // var features = vectorLayer.getSource().getFeatures();
+
+    for (var i = 0; i < iconFeature.length; i++) {
+        iconFeature[i].getStyle().getImage().setOpacity(1);
+    }
+    vectorLayer.getSource().changed();
 }
