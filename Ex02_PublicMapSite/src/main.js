@@ -25,7 +25,7 @@ var midDiv = document.getElementById("midDiv");
 var rightDiv = document.getElementById("rightDiv");
 var btmDiv = document.getElementById("btmDiv");
 
-var mapSelectDiv = document.getElementById("mapSelectDiv");
+// var mapSelectDiv = document.getElementById("mapSelectDiv");
 var mapSelectListDiv = document.getElementById("mapSelectListDiv");
 
 
@@ -219,7 +219,7 @@ map.on('click', function (event) {
             var commentString = notes[i].querySelector("#commentPosition").innerHTML.trim();
             console.log(typeof commentString);
             if (featurePosString != commentString) {
-                notes[i].style.opacity = 0.5;
+                notes[i].style.opacity = 0.3;
             }
         }
     } else {
@@ -282,7 +282,14 @@ document.getElementById("commentSubmitBtn").addEventListener("click", function (
         document.getElementById("levelNotice").text = "<-- PLEASE SELECT LEVEL!";
     } else if (content.length > 0) {
         var feature = currentFeature.feature;
-        var type = currentFeature.featuretype;
+        var type = [];
+        if (feature.getProperties().type === undefined) {
+            type = [currentFeature.featuretype];
+        } else {
+            console.log(feature.getProperties().type);
+            type = feature.getProperties().type;
+            type.unshift(currentFeature.featuretype);
+        }
         var level = currentFeature.level;
         var position = currentFeature.position;
         var d = new Date();
@@ -297,14 +304,8 @@ document.getElementById("commentSubmitBtn").addEventListener("click", function (
         commentOverlay.style.opacity = 0;
 
         var noteNode = document.createElement("div");
-        noteNode.innerHTML = `<div class="note"><div><span id="commentType" class="label ` + labelType[type] + `">` + type + `</span>                                    
-        <span class="label label-danger" id="commentPosition">` + position + ` </span>
-                                    <span class="label label-default" style="float:right">` + d.toDateString() + `</span>                                    
-                                    <span class="label label-danger" style="float:right; margin-right: 10px;">lvl ` + level + `</span>
-                                </div>
-                                <div>
-                                    <br> ` + content + `
-                                </div></div>`;
+        noteNode.innerHTML = '<div class="note"><div><span id="commentType" style="margin-right: 5px;" class="label ' + labelType[currentFeature.featuretype] + '">' + currentFeature.featuretype + '</span><span class="label label-danger" id="commentPosition">' + position +
+            '</span><span class="label label-default" style="float:right">' + d.toDateString() + '</span><span class="label label-danger" style="float:right; margin-right: 10px;">lvl' + level + '</span></div><div><br>' + content + '</div></div>';
         document.getElementById("notes").insertBefore(noteNode, document.getElementById("notes").firstChild);
         resetCommentDiv();
 
